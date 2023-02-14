@@ -7,7 +7,7 @@ variable "region" {
 }
 
 variable "kubernetes_version" {
-  default = "1.23"
+  default = "1.24"
 }
 
 variable "desired_size" {
