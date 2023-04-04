@@ -31,18 +31,20 @@ module "node" {
 
 }
 
-module "eks_blueprints_kubernetes_addons" {
-  source = "github.com/aws-ia/terraform-aws-eks-blueprints//modules/kubernetes-addons?ref=v4.24.0"
+#Comentando pois existem dependencias do eks blueprints que não estão funcionando.
 
-  eks_cluster_id = module.master.cluster_name
+# module "eks_blueprints_kubernetes_addons" {
+#   source = "github.com/aws-ia/terraform-aws-eks-blueprints//modules/kubernetes-addons?ref=v4.24.0"
 
-  # EKS Addons
-  enable_amazon_eks_vpc_cni            = true
-  enable_amazon_eks_coredns            = true
-  enable_amazon_eks_kube_proxy         = true
-  enable_amazon_eks_aws_ebs_csi_driver = true
+#   eks_cluster_id = module.master.cluster_name
 
-  depends_on = [
-    null_resource.export_kubeconfig
-  ]
-}
+#   # EKS Addons
+#   enable_amazon_eks_vpc_cni            = true
+#   enable_amazon_eks_coredns            = true
+#   enable_amazon_eks_kube_proxy         = true
+#   enable_amazon_eks_aws_ebs_csi_driver = true
+
+#   depends_on = [
+#     null_resource.export_kubeconfig
+#   ]
+# }
