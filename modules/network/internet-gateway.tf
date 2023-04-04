@@ -4,7 +4,6 @@ resource "aws_internet_gateway" "eks_ig" {
   tags = {
     Name = format("%s-internet-gateway", var.cluster_name)
   }
-
 }
 
 resource "aws_route_table" "eks_public_rt" {
@@ -18,5 +17,4 @@ resource "aws_route_table" "eks_public_rt" {
   tags = {
     Name = format("%s-public-rt", var.cluster_name)
   }
-
 }

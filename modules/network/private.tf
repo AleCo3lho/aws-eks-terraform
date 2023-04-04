@@ -5,11 +5,10 @@ resource "aws_subnet" "eks_subnet_private_1a" {
   availability_zone = format("%sa", var.region)
 
   tags = {
-    Name = format("%s-subnet-private-1a", var.cluster_name)
+    Name                                        = format("%s-subnet-private-1a", var.cluster_name)
     "kubernetes.io/cluster/${var.cluster_name}" = "shared"
-    "kubernetes.io/role/internal-elb" = ""
+    "kubernetes.io/role/internal-elb"           = ""
   }
-
 }
 
 resource "aws_subnet" "eks_subnet_private_1b" {
@@ -19,11 +18,10 @@ resource "aws_subnet" "eks_subnet_private_1b" {
   availability_zone = format("%sb", var.region)
 
   tags = {
-    Name = format("%s-subnet-private-1b", var.cluster_name)
+    Name                                        = format("%s-subnet-private-1b", var.cluster_name)
     "kubernetes.io/cluster/${var.cluster_name}" = "shared"
-    "kubernetes.io/role/internal-elb" = ""
+    "kubernetes.io/role/internal-elb"           = ""
   }
-
 }
 
 resource "aws_route_table_association" "eks_private_rt_association_1a" {

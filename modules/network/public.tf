@@ -6,11 +6,10 @@ resource "aws_subnet" "eks_subnet_public_1a" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = format("%s-subnet-public-1a", var.cluster_name)
+    Name                                        = format("%s-subnet-public-1a", var.cluster_name)
     "kubernetes.io/cluster/${var.cluster_name}" = "shared"
-    "kubernetes.io/role/elb" = ""
+    "kubernetes.io/role/elb"                    = ""
   }
-
 }
 
 resource "aws_subnet" "eks_subnet_public_1b" {
@@ -20,11 +19,10 @@ resource "aws_subnet" "eks_subnet_public_1b" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = format("%s-subnet-public-1b", var.cluster_name)
+    Name                                        = format("%s-subnet-public-1b", var.cluster_name)
     "kubernetes.io/cluster/${var.cluster_name}" = "shared",
-    "kubernetes.io/role/elb" = ""
+    "kubernetes.io/role/elb"                    = ""
   }
-
 }
 
 resource "aws_route_table_association" "eks_public_rt_association_1a" {

@@ -1,5 +1,5 @@
 variable "cluster_name" {
-  default = "eks-coelhostuff-001"
+  default = "eks-coelhor-dev-001"
 }
 
 variable "region" {
