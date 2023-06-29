@@ -18,7 +18,8 @@ module "master" {
 module "node" {
   source = "./modules/node"
 
-  cluster_name = module.master.cluster_name
+  cluster_name = var.cluster_name
+  node_group_project = "services"
 
   instance_types = var.instance_types
 

@@ -11,3 +11,5 @@ variable "desired_size" {}
 variable "max_size" {}
 
 variable "min_size" {}
+
+variable "node_group_project" {}
