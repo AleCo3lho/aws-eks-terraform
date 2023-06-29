@@ -1,5 +1,5 @@
 resource "aws_eip" "eks_eip" {
-  vpc = true
+  domain = "vpc"
 
   tags = {
     "Name" = format("%s-elastic-ip", var.cluster_name)
