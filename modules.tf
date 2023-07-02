@@ -30,6 +30,10 @@ module "node" {
   min_size     = var.min_size
   max_size     = var.max_size
 
+  depends_on = [
+    module.master
+  ]
+
 }
 
 module "eks_blueprints_kubernetes_addons" {
