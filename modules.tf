@@ -21,14 +21,15 @@ module "node" {
   cluster_name = var.cluster_name
   node_group_project = "services"
 
-  instance_types = var.instance_types
+  instance_types = "t4g.large"
+  ami_type = "AL2_ARM_64"
 
   private_subnet_1a = module.network.private_subnet_1a
   private_subnet_1b = module.network.private_subnet_1b
 
-  desired_size = var.desired_size
-  min_size     = var.min_size
-  max_size     = var.max_size
+  desired_size = 1
+  min_size     = 0
+  max_size     = 1
 
   depends_on = [
     module.master

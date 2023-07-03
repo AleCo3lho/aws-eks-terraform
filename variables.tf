@@ -9,19 +9,3 @@ variable "region" {
 variable "kubernetes_version" {
   default = "1.26"
 }
-
-variable "desired_size" {
-  default = 1
-}
-
-variable "min_size" {
-  default = 0
-}
-
-variable "max_size" {
-  default = 1
-}
-
-variable "instance_types" {
-  default = ["t3.large"]
-}
