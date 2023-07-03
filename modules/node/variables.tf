@@ -15,3 +15,5 @@ variable "min_size" {}
 variable "node_group_project" {}
 
 variable "ami_type" {}
+
+variable "node_role_arn" {}

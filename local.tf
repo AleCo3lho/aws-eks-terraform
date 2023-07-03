@@ -9,7 +9,7 @@ metadata:
   namespace: kube-system
 data:
   mapRoles: |
-    - rolearn: ${module.node.rolearn}
+    - rolearn: ${module.service_node.rolearn}
       username: system:node:{{EC2PrivateDNSName}}
       groups:
         - system:bootstrappers

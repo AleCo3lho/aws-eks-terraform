@@ -6,6 +6,6 @@ resource "null_resource" "export_kubeconfig" {
   }
   depends_on = [
     module.master,
-    module.node
+    module.service_node
   ]
 }

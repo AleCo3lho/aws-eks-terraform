@@ -2,7 +2,7 @@ resource "aws_eks_node_group" "eks_node_group" {
 
   cluster_name    = var.cluster_name
   node_group_name = format("%s-node-group", var.node_group_project)
-  node_role_arn   = aws_iam_role.eks_node_role.arn
+  node_role_arn   = var.node_role_arn
   instance_types  = var.instance_types
   ami_type        = var.ami_type
 
@@ -16,10 +16,4 @@ resource "aws_eks_node_group" "eks_node_group" {
     max_size     = var.max_size
     min_size     = var.min_size
   }
-
-  depends_on = [
-    aws_iam_role_policy_attachment.eks_AmazonEKSWorkerNodePolicy,
-    aws_iam_role_policy_attachment.eks_AmazonEKS_CNI_Policy,
-    aws_iam_role_policy_attachment.eks_AmazonEC2ContainerRegistryReadOnly
-  ]
 }
